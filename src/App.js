@@ -5,13 +5,13 @@ import Saludar from './components/Saludar';
 function App() {
 
   const user={
-    nombre:"Juan HN",
+    // nombre:"Juan HN",
     edad:18,
     color:"rojo"
   }
 
   const saludarfn = name=>{
-    console.log("Hola" + name);
+    console.log("Hola " + name);
   };
 
   return (
