@@ -1,7 +1,9 @@
 import React,{useEffect, useState} from 'react';
 import { Button, Accordion,Alert } from 'react-bootstrap';
 import { ReactComponent as ReactIcon} from './assets/dragon.svg';
-
+import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
+import Contacto from "./pages/Contacto";
+import Perfil from "./pages/Perfil";
 import './App.css';
 
 function App() {
@@ -66,6 +68,28 @@ function App() {
 
 
       <h4>click: {contar}</h4>
+      <Router>
+        <div>
+        <Link to="/">
+            <Button>Home</Button>
+          </Link>
+          <Link to="/contacto">
+            <Button>Contacto</Button>
+          </Link>
+          <Link to="/perfil">
+            <Button>Perfil</Button>
+          </Link>
+         
+        </div>
+
+
+        <Routes>
+        
+          <Route path="/contacto" element={<Contacto/>}/>
+          <Route path="/perfil" element={<Perfil/>}/>
+
+        </Routes>
+      </Router>
     </div>
   );
 }
