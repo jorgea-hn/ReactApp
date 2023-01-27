@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Accordion,Alert } from 'react-bootstrap';
-
+import { ReactComponent as ReactIcon} from './assets/dragon.svg';
 
 import './App.css';
 
@@ -9,6 +9,7 @@ function App() {
   return (
     <div className='App'>
       <h1>React Boostrap</h1>
+      <ReactIcon/>
       <Button variant="secondary" onClick={() => console.log("Hola")} size="lg">
         Block level button
       </Button>
