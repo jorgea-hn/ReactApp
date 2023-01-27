@@ -1,10 +1,18 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Button, Accordion,Alert } from 'react-bootstrap';
 import { ReactComponent as ReactIcon} from './assets/dragon.svg';
 
 import './App.css';
 
 function App() {
+  const [stateCar,setStateCar] = useState(false);
+
+
+  const encenderApagar =()=>{
+    // console.log("Encender / Apagar")
+    // setStateCar(!stateCar);
+    setStateCar(preValue=>!preValue);
+  };
 
   return (
     <div className='App'>
@@ -44,6 +52,9 @@ function App() {
       <Alert variant="primary">
           This is a alert—check it out!
       </Alert>
+
+      <h3>El conche esta: {stateCar ? "Encendido": "Apagado"} </h3>
+      <button onClick={encenderApagar}>Encender/Apagar</button>
     </div>
   );
 }
