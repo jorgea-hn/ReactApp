@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Button, Accordion,Alert } from 'react-bootstrap';
 import { ReactComponent as ReactIcon} from './assets/dragon.svg';
 
@@ -6,12 +6,19 @@ import './App.css';
 
 function App() {
   const [stateCar,setStateCar] = useState(false);
+  const [contar,setContar] = useState(0)
 
+  
+
+  useEffect(()=>{
+    console.log("Total: " + contar)
+  },[])
 
   const encenderApagar =()=>{
     // console.log("Encender / Apagar")
     // setStateCar(!stateCar);
     setStateCar(preValue=>!preValue);
+    setContar(contar+1)
   };
 
   return (
@@ -55,6 +62,10 @@ function App() {
 
       <h3>El conche esta: {stateCar ? "Encendido": "Apagado"} </h3>
       <button onClick={encenderApagar}>Encender/Apagar</button>
+
+
+
+      <h4>click: {contar}</h4>
     </div>
   );
 }
